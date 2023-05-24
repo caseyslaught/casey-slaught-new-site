@@ -9,10 +9,16 @@ interface Props {
 }
 
 const MainLayout: React.FC<Props> = ({ children }) => {
-  const [isMobileOrTablet] = useMediaQuery("(max-width: 768px)");
+  const [isMobileOrTablet] = useMediaQuery("(max-width: 860px)");
 
   return (
-    <Flex direction="column" minH="100vh" bg="primary.800" color="grey.50">
+    <Flex
+      direction="column"
+      minH="100vh"
+      bg="primary.800"
+      color="grey.50"
+      overflowX="hidden"
+    >
       <Suspense fallback={<div>Loading...</div>}>
         <HeaderMain isMobileOrTablet={isMobileOrTablet} />
         {children}

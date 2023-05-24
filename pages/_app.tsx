@@ -1,11 +1,6 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import {
-  ChakraProvider,
-  defineStyle,
-  defineStyleConfig,
-  extendTheme,
-} from "@chakra-ui/react";
+import { ChakraProvider, defineStyle, extendTheme } from "@chakra-ui/react";
 
 import "@fontsource/roboto-mono/400.css";
 import "@fontsource/roboto-mono/700.css";
@@ -20,9 +15,10 @@ export default function App({ Component, pageProps }: AppProps) {
   const theme = extendTheme({
     breakpoints: {
       sm: "480px",
-      md: "768px",
+      md: "860px",
       lg: "1024px",
       xl: "1440px",
+      "2xl": "1920px",
     },
     fonts: {
       heading: "Roboto Mono",
@@ -38,6 +34,9 @@ export default function App({ Component, pageProps }: AppProps) {
         600: "#495A74",
         700: "#314159",
         800: "#222f42",
+      },
+      secondary: {
+        200: "#D9D9D9",
       },
     },
     components: {

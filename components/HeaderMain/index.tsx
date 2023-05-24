@@ -10,7 +10,6 @@ import {
   DrawerContent,
   DrawerOverlay,
   Flex,
-  Heading,
   HStack,
   IconButton,
   Link,
@@ -25,7 +24,7 @@ interface Props {
 
 const HeaderMain: React.FC<Props> = ({ isMobileOrTablet }) => {
   return (
-    <Flex w="100%" p="1em" h="80px">
+    <Flex w="100%" px={["1em", "1em", "2em"]} h="80px">
       <Flex
         color="gray.50"
         w="100%"
@@ -37,41 +36,30 @@ const HeaderMain: React.FC<Props> = ({ isMobileOrTablet }) => {
         <Text color="gray.200" fontSize="xl">
           Casey Slaught
         </Text>
-        {isMobileOrTablet ? (
-          <MobileMenu />
-        ) : (
-          <HStack spacing={5}>
-            <Link>
-              <Text fontSize="sm">👋 Intro</Text>
-            </Link>
-            <Link>
-              <Text fontSize="sm">🧑‍💻 Experience</Text>
-            </Link>
-            <Link>
-              <Text fontSize="sm">🏗️ Projects</Text>
-            </Link>
-            <Link>
-              <Text fontSize="sm">✉️ Contact</Text>
-            </Link>
-            <Button colorScheme="accent" variant="outline">
-              Resume
-            </Button>
-          </HStack>
-        )}
+        {isMobileOrTablet ? <MobileMenu /> : <DesktopMenu />}
       </Flex>
     </Flex>
   );
 };
 
+const DesktopMenu: React.FC = () => {
+  return (
+    <HStack spacing={5}>
+      <Sections isMobileOrTablet={false} />
+      <Button colorScheme="accent" variant="outline">
+        Resume
+      </Button>
+    </HStack>
+  );
+};
+
 const MobileMenu: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const menuRef = useRef();
 
   return (
     <>
       <Box position="relative">
         <IconButton
-          //ref={menuRef}
           color="gray.200"
           aria-label="Menu"
           fontSize="2.4em"
@@ -92,7 +80,8 @@ const MobileMenu: React.FC = () => {
         isOpen={menuOpen}
         placement="right"
         onClose={() => setMenuOpen(false)}
-        //finalFocusRef={menuRef}
+        autoFocus={false}
+        returnFocusOnClose={false}
       >
         <DrawerOverlay />
         <DrawerContent bg="primary.700" color="gray.50">
@@ -105,14 +94,76 @@ const MobileMenu: React.FC = () => {
 
               <Divider pt={2} />
 
-              <Text fontSize="md">👋 Intro</Text>
-              <Text fontSize="md">🧑‍💻 Experience</Text>
-              <Text fontSize="md">🏗️ Projects</Text>
-              <Text fontSize="md">✉️ Contact</Text>
+              <Sections
+                isMobileOrTablet={true}
+                onClickCallback={() => {
+                  setMenuOpen(false);
+                }}
+              />
             </VStack>
           </DrawerBody>
         </DrawerContent>
       </Drawer>
+    </>
+  );
+};
+
+interface SectionsProps {
+  isMobileOrTablet: boolean;
+  onClickCallback?: () => void;
+}
+
+const Sections: React.FC<SectionsProps> = ({
+  isMobileOrTablet,
+  onClickCallback,
+}) => {
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    const offsetPad = isMobileOrTablet ? 20 : 80;
+    if (section) {
+      const offset = section.offsetTop - offsetPad;
+      window.scrollTo({
+        top: offset,
+        behavior: "smooth",
+      });
+      if (onClickCallback) {
+        onClickCallback();
+      }
+    }
+  };
+
+  const fontSize = isMobileOrTablet ? "md" : "sm";
+
+  return (
+    <>
+      <Link
+        onClick={() => {
+          scrollToSection("intro-section");
+        }}
+      >
+        <Text fontSize={fontSize}>👋 Intro</Text>
+      </Link>
+      <Link
+        onClick={() => {
+          scrollToSection("experience-section");
+        }}
+      >
+        <Text fontSize={fontSize}>🧑‍💻 Experience</Text>
+      </Link>
+      <Link
+        onClick={() => {
+          scrollToSection("projects-section");
+        }}
+      >
+        <Text fontSize={fontSize}>🏗️ Projects</Text>
+      </Link>
+      <Link
+        onClick={() => {
+          scrollToSection("contact-section");
+        }}
+      >
+        <Text fontSize={fontSize}>✉️ Contact</Text>
+      </Link>
     </>
   );
 };
