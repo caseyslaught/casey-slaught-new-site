@@ -56,6 +56,29 @@ export default function App({ Component, pageProps }: AppProps) {
         },
       },
     },
+    styles: {
+      global: {
+        "html, #jobs-list": {
+          "::-webkit-scrollbar": {
+            width: "10px",
+          },
+          "::-webkit-scrollbar-thumb": {
+            backgroundColor: "#454545",
+            border: "2px solid #222f42",
+            borderRadius: "8px",
+          },
+
+          "::-webkit-scrollbar-track": {
+            backgroundColor: "#222f42",
+          },
+        },
+        "#jobs-list": {
+          "::-webkit-scrollbar": {
+            width: "12px",
+          },
+        },
+      },
+    },
   });
 
   return (
