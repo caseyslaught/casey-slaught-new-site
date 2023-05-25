@@ -4,6 +4,7 @@ import { Divider, Flex, Heading, Text, VStack } from "@chakra-ui/react";
 import MainLayout from "../layouts/main";
 import IntroSection from "../components/IntroSection";
 import ExperienceSection from "../components/ExperienceSection";
+import ProjectsSection from "../components/ProjectsSection";
 
 export default function Home() {
   return (
@@ -58,33 +59,6 @@ const HeroSection = () => {
             projects at Virunga National Park in the Democratic Republic of the
             Congo.
           </Text>
-        </VStack>
-      </Flex>
-    </Flex>
-  );
-};
-
-const ProjectsSection = () => {
-  return (
-    <Flex
-      id="projects-section"
-      px={["1em", "1em", "2em"]}
-      justify="flex-start"
-      align="flex-start"
-      pb={["60px", "120px"]}
-    >
-      <Flex
-        direction="column"
-        align="flex-start"
-        w="100%"
-        maxW="1080px"
-        m="0 auto"
-        color="gray.50"
-        mb="40px"
-      >
-        <VStack w={["100%", "100%", "360px"]} align="flex-start" mb="20px">
-          <Heading fontSize={["xl", "2xl"]}>🏗️ Projects</Heading>
-          <Divider />
         </VStack>
       </Flex>
     </Flex>

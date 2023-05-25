@@ -77,6 +77,16 @@ export default function App({ Component, pageProps }: AppProps) {
             width: "12px",
           },
         },
+        "@media (min-width: 860px)": {
+          ".project-image": {
+            opacity: 0.8,
+          },
+        },
+        "@media (max-width: 860px)": {
+          ".project-image": {
+            opacity: 0.4,
+          },
+        },
       },
     },
   });

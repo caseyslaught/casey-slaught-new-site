@@ -138,7 +138,7 @@ const jobs: JobType = {
     points: [
       "Founded a plant shop that works with small-scale plant nurseries, potters, and visual artists, highlighting native species and local art forms",
       "Training a staff of 3 to handle all aspects of the company, from procurement and preparation, to sales and delivery",
-      "Injected over $12,000 into artisinal craftspeople and plant nurseries in the first year of operation",
+      "Contributed to local pottery and plant nursery communities by spending over $12,000 on local products in the first year",
     ],
   },
   "quip.link": {
