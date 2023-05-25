@@ -21,7 +21,7 @@ const ExperienceSection: React.FC<Props> = () => {
       px={["1em", "1em", "2em"]}
       justify="flex-start"
       align="flex-start"
-      minH="calc(100vh)"
+      pb={["60px", "120px"]}
     >
       <Flex
         direction="column"
@@ -30,7 +30,6 @@ const ExperienceSection: React.FC<Props> = () => {
         maxW="1080px"
         m="0 auto"
         color="gray.50"
-        mb="40px"
       >
         <VStack w={["100%", "100%", "360px"]} align="flex-start" mb="20px">
           <Heading fontSize={["xl", "2xl"]}>🧑‍💻 Experience</Heading>
@@ -80,7 +79,7 @@ const ExperienceSection: React.FC<Props> = () => {
 
           <VStack
             align="flex-start"
-            h="360px"
+            h={["auto", "auto", "360px"]}
             flex={["", "", 1]}
             w={["100%", "100%", "auto"]}
             maxW="560px"

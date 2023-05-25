@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Box,
   Button,
@@ -23,8 +23,45 @@ interface Props {
 }
 
 const HeaderMain: React.FC<Props> = ({ isMobileOrTablet }) => {
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
+  const [showShadow, setShowShadow] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      if (prevScrollPos > currentScrollPos || currentScrollPos < 80) {
+        setVisible(true); // show header when scrolling up
+      } else {
+        setVisible(false); // hide header when scrolling down
+      }
+      if (currentScrollPos > 80) {
+        setShowShadow(true);
+      } else {
+        setShowShadow(false);
+      }
+
+      setPrevScrollPos(currentScrollPos);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [prevScrollPos]);
+
   return (
-    <Flex w="100%" px={["1em", "1em", "2em"]} h="80px">
+    <Flex
+      w="100%"
+      bg="primary.800"
+      px={["1em", "1em", "2em"]}
+      h={prevScrollPos > 80 ? "60px" : "80px"}
+      position="fixed"
+      top={visible ? "0" : "-80px"}
+      zIndex={999}
+      transition="all 0.3s ease-in-out"
+      shadow={showShadow ? "lg" : "none"}
+    >
       <Flex
         color="gray.50"
         w="100%"

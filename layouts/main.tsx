@@ -18,6 +18,7 @@ const MainLayout: React.FC<Props> = ({ children }) => {
       bg="primary.800"
       color="grey.50"
       overflowX="hidden"
+      pt="80px"
     >
       <Suspense fallback={<div>Loading...</div>}>
         <HeaderMain isMobileOrTablet={isMobileOrTablet} />
