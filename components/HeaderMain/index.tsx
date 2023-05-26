@@ -19,10 +19,11 @@ import {
 import { FiAlignRight } from "react-icons/fi";
 
 interface Props {
+  isLoaded: boolean;
   isMobileOrTablet: boolean;
 }
 
-const HeaderMain: React.FC<Props> = ({ isMobileOrTablet }) => {
+const HeaderMain: React.FC<Props> = ({ isLoaded, isMobileOrTablet }) => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
   const [showShadow, setShowShadow] = useState(false);
@@ -50,6 +51,11 @@ const HeaderMain: React.FC<Props> = ({ isMobileOrTablet }) => {
     };
   }, [prevScrollPos]);
 
+  let top = "-80px";
+  if (visible && isLoaded) {
+    top = "0px";
+  }
+
   return (
     <Flex
       w="100%"
@@ -57,7 +63,7 @@ const HeaderMain: React.FC<Props> = ({ isMobileOrTablet }) => {
       px={["1em", "2em"]}
       h={prevScrollPos > 80 ? "60px" : "80px"}
       position="fixed"
-      top={visible ? "0" : "-80px"}
+      top={top}
       zIndex={999}
       transition="all 0.3s ease-in-out"
       shadow={showShadow ? "lg" : "none"}

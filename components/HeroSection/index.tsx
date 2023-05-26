@@ -1,9 +1,11 @@
 import React from "react";
-import { Flex, Text, VStack } from "@chakra-ui/react";
+import { Flex, Skeleton, Text, VStack } from "@chakra-ui/react";
 
-interface Props {}
+interface Props {
+  isLoaded: boolean;
+}
 
-const HeroSection: React.FC<Props> = () => {
+const HeroSection: React.FC<Props> = ({ isLoaded }) => {
   return (
     <Flex
       id="hero-section"
@@ -21,23 +23,31 @@ const HeroSection: React.FC<Props> = () => {
         mb="40px"
       >
         <VStack spacing={6} maxW="560px" align="flex-start">
-          <Text>Hey there,</Text>
-          <Text>
-            My name is{" "}
-            <Text as="span" color="accent.500">
-              Casey Slaught
+          <Skeleton isLoaded={isLoaded} fadeDuration={2}>
+            <Text>Hey there,</Text>
+          </Skeleton>
+          <Skeleton isLoaded={isLoaded} fadeDuration={2}>
+            <Text>
+              My name is{" "}
+              <Text as="span" color="accent.500">
+                Casey Slaught
+              </Text>
+              .
             </Text>
-            .
-          </Text>
-          <Text>I build geospatial applications on the web.</Text>
-          <Text>
-            I&apos;m a full-stack developer focused on building
-            geospatial-driven applications that have a meaningful environmental
-            impact. I recently earned a Masters in Environmental Management
-            degree from Duke University. I also oversee a couple technology
-            projects at Virunga National Park in the Democratic Republic of the
-            Congo.
-          </Text>
+          </Skeleton>
+          <Skeleton isLoaded={isLoaded} fadeDuration={2}>
+            <Text>I build geospatial applications on the web.</Text>{" "}
+          </Skeleton>
+          <Skeleton isLoaded={isLoaded} fadeDuration={2}>
+            <Text>
+              I&apos;m a full-stack developer focused on building
+              geospatial-driven applications that have a meaningful
+              environmental impact. I recently earned a Masters in Environmental
+              Management degree from Duke University. I also oversee a couple
+              technology projects at Virunga National Park in the Democratic
+              Republic of the Congo.
+            </Text>
+          </Skeleton>
         </VStack>
       </Flex>
     </Flex>

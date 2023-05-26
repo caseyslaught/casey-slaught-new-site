@@ -1,14 +1,13 @@
 import React from "react";
 import {
+  As,
+  Divider,
   Flex,
   Heading,
-  Divider,
   Icon,
   Link,
   Text,
   VStack,
-  HStack,
-  As,
 } from "@chakra-ui/react";
 import { FiGithub, FiMail, FiTwitter } from "react-icons/fi";
 

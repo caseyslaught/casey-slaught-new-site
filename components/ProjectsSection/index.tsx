@@ -1,9 +1,7 @@
 import React from "react";
 import NextImage from "next/image";
-import NextLink from "next/link";
 
 import {
-  Box,
   Divider,
   Flex,
   HStack,
@@ -14,7 +12,6 @@ import {
   UnorderedList,
   VStack,
   useMediaQuery,
-  Img,
 } from "@chakra-ui/react";
 import { FiExternalLink, FiGithub } from "react-icons/fi";
 
