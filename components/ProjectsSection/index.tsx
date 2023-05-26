@@ -127,13 +127,20 @@ const ProjectItem: React.FC<ItemProps> = ({
         </UnorderedList>
 
         <HStack spacing={4}>
-          <Link href={github} target="_blank">
-            <Icon as={FiGithub} fontSize="1.8em" color="secondary.200" />
-          </Link>
-
-          <Link href={demo} target="_blank">
-            <Icon as={FiExternalLink} fontSize="1.8em" color="secondary.200" />
-          </Link>
+          {github && (
+            <Link href={github} target="_blank">
+              <Icon as={FiGithub} fontSize="1.8em" color="secondary.200" />
+            </Link>
+          )}
+          {demo && (
+            <Link href={demo} target="_blank">
+              <Icon
+                as={FiExternalLink}
+                fontSize="1.8em"
+                color="secondary.200"
+              />
+            </Link>
+          )}
         </HStack>
       </VStack>
       <Flex
@@ -181,7 +188,7 @@ const projects: ProjectItemType[] = [
     tech: ["Python", "NN/ML", "React", "GDAL", "Mapbox", "Django", "AWS"],
     github: "https://github.com/caseyslaught/smartcarte-containers",
     demo: "https://smartcarte.earth/demo/halmahera-nickel-apr-2023",
-    image: "/images/smart_carte.png",
+    image: "/images/smartcarte.png",
   },
   {
     title: "SimpleDroneMaps",
@@ -190,16 +197,25 @@ const projects: ProjectItemType[] = [
     tech: ["Python", "GDAL", "React", "Mapbox", "Django", "AWS"],
     github: "",
     demo: "https://simpledronemaps.com",
-    image: "/images/smart_carte.png",
+    image: "/images/simpledronemaps.png",
   },
   {
     title: "Virunga LoRa Alert System",
     description:
       "This system helps communities report sightings of dangerous rebel groups in the region as well as helping the park to track vehicles and personnel. I designed the LoRa antenna network and built the software that makes use of the position data.",
     tech: ["LoRaWAN", "Chirpstack", "Python", "React", "AWS"],
-    github: "",
+    github: "https://github.com/virunga/lora-alert-app",
     demo: "",
-    image: "/images/smart_carte.png",
+    image: "/images/loraalertsystem.png",
+  },
+  {
+    title: "Allergood",
+    description:
+      "I worked as a software engineer and UI designer for Allergood, a startup that helps people with food allergies find safe restaurants. I built the Next.js web application which features a Stripe integration for payments.",
+    tech: ["Next.js", "React", "Stripe"],
+    github: "",
+    demo: "https://allergood.com",
+    image: "/images/allergood.png",
   },
 ];
 
