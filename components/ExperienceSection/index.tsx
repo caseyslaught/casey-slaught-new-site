@@ -18,7 +18,7 @@ const ExperienceSection: React.FC<Props> = () => {
   return (
     <Flex
       id="experience-section"
-      px={["1em", "1em", "2em"]}
+      px={["1em", "2em"]}
       justify="flex-start"
       align="flex-start"
       pb={["60px", "120px"]}

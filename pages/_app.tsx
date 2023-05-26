@@ -77,9 +77,16 @@ export default function App({ Component, pageProps }: AppProps) {
             width: "12px",
           },
         },
+        ".project-image": {
+          transition: "all 0.2s",
+        },
         "@media (min-width: 860px)": {
           ".project-image": {
-            opacity: 0.8,
+            opacity: 0.6,
+            _hover: {
+              opacity: 1,
+              filter: "blur(0px) !important",
+            },
           },
         },
         "@media (max-width: 860px)": {

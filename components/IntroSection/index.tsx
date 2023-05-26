@@ -26,10 +26,9 @@ const IntroSection: React.FC<Props> = () => {
   return (
     <Flex
       id="intro-section"
-      px={["1em", "1em", "2em"]}
+      px={["1em", "2em"]}
       justify="flex-start"
       align="flex-start"
-      //minH={["none", "none", "calc(100vh)"]}
       pb={["60px", "120px"]}
     >
       <Flex
@@ -55,7 +54,7 @@ const IntroSection: React.FC<Props> = () => {
             align="flex-start"
             justify="center"
             w="100%"
-            maxW="500px"
+            maxW={["none", "none", "500px"]}
             spacing={6}
             zIndex={[0, 0, 99]}
             fontSize="0.9em"
@@ -70,7 +69,9 @@ const IntroSection: React.FC<Props> = () => {
             <Text>
               Software is a means to an end and since 2013 the end that I
               thought most in need attention was the ongoing pressures faced by
-              conservationists and the wildlife they protect.
+              conservationists and the wildlife they protect. I have been using
+              my understanding of computer science to help conservationists in
+              their fight against poaching and other illegal activities.
             </Text>
             <Text>
               Aenean sed adipiscing diam donec adipiscing tristique risus nec.

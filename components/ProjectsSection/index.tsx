@@ -21,15 +21,14 @@ import { FiExternalLink, FiGithub } from "react-icons/fi";
 interface Props {}
 
 const ProjectsSection: React.FC<Props> = () => {
-  const [isMobileOrTablet] = useMediaQuery("(min-width: 860px)");
-
   return (
     <Flex
       id="projects-section"
-      px={["1em", "1em", "2em"]}
+      px={["1em", "2em"]}
       justify="flex-start"
       align="flex-start"
       pb={["60px", "120px"]}
+      zIndex={9}
     >
       <Flex
         direction="column"
@@ -45,92 +44,163 @@ const ProjectsSection: React.FC<Props> = () => {
           <Divider />
         </VStack>
 
-        <VStack w="100%">
-          <Flex w="100%" justify="flex-start" position="relative">
-            <VStack
-              w="100%"
-              maxW="480px"
-              align="flex-start"
-              mt={["10px", "40px"]}
-              px="10px"
-              spacing={4}
-              zIndex={999}
-            >
-              <Heading fontSize="xl">Smart Carte</Heading>
-              <Flex
-                bg="secondary.200"
-                color="primary.700"
-                p="1em"
-                borderRadius="md"
-              >
-                I am currently working on a cloud-based remote sensing tool to
-                help protected areas understand deforestation and burned areas.
-                Current remote sensing tools require too much expertise for
-                parks to invest in. This tool makes it really simple to
-                understand forests and grasslands and direct staff to hotspots.
-              </Flex>
-
-              <UnorderedList
-                display="flex"
-                flexWrap="wrap"
-                position="relative"
-                styleType="none"
-                px="2px"
-              >
-                <ListItem me="10px">Python</ListItem>
-                <ListItem me="10px">NN/ML</ListItem>
-                <ListItem me="10px">React</ListItem>
-                <ListItem me="10px">Mapbox</ListItem>
-                <ListItem me="10px">Django</ListItem>
-                <ListItem me="10px">AWS</ListItem>
-              </UnorderedList>
-
-              <HStack spacing={4}>
-                <Link
-                  href="https://github.com/caseyslaught/smartcarte-containers"
-                  target="_blank"
-                >
-                  <Icon as={FiGithub} fontSize="1.8em" color="secondary.200" />
-                </Link>
-
-                <Link
-                  href="https://smartcarte.earth/demo/halmahera-nickel-apr-2023"
-                  target="_blank"
-                >
-                  <Icon
-                    as={FiExternalLink}
-                    fontSize="1.8em"
-                    color="secondary.200"
-                  />
-                </Link>
-              </HStack>
-            </VStack>
-            <Flex
-              w={["100%", "100%", "640px"]}
-              h="480px"
-              bg="primary.700"
-              position="absolute"
-              right={0}
-              zIndex={0}
-              overflow="hidden"
-              borderRadius="md"
-            >
-              <NextImage
-                className="project-image"
-                fill={true}
-                src="/images/smart_carte.png"
-                alt="Smart Carte screenshot"
-                style={{
-                  objectFit: "cover",
-                  filter: "blur(1px)",
-                }}
-              />
-            </Flex>
-          </Flex>
+        <VStack w="100%" spacing={[8, 12, 24]}>
+          {projects.map((project, i) => (
+            <ProjectItem
+              key={project.title}
+              {...project}
+              direction={i % 2 == 0 ? "ltor" : "rtol"}
+            />
+          ))}
         </VStack>
       </Flex>
     </Flex>
   );
 };
+
+interface ItemProps {
+  direction: "ltor" | "rtol";
+  title: string;
+  description: string;
+  tech: string[];
+  github: string;
+  demo: string;
+  image: string;
+}
+
+const ProjectItem: React.FC<ItemProps> = ({
+  direction,
+  title,
+  description,
+  tech,
+  github,
+  demo,
+  image,
+}) => {
+  const [isMobileOrTablet] = useMediaQuery("(max-width: 860px)");
+
+  return (
+    <Flex
+      h={["520px", "500px", "480px"]}
+      w="100%"
+      mt="40px"
+      align="center"
+      justify={
+        direction === "ltor" || isMobileOrTablet ? "flex-start" : "flex-end"
+      }
+      position="relative"
+    >
+      <VStack
+        w="100%"
+        maxW="480px"
+        align={
+          direction === "ltor" || isMobileOrTablet ? "flex-start" : "flex-end"
+        }
+        mt={["10px", "40px"]}
+        px={["10px", "24px", "10px"]}
+        spacing={4}
+        zIndex={999}
+      >
+        <Heading fontSize="xl">{title}</Heading>
+        <Flex
+          bg="secondary.200"
+          color="primary.700"
+          p="1em"
+          borderRadius="md"
+          shadow="md"
+        >
+          {description}
+        </Flex>
+
+        <UnorderedList
+          display="flex"
+          flexWrap="wrap"
+          position="relative"
+          styleType="none"
+          px="2px"
+        >
+          {tech.map((t) => (
+            <ListItem key={t} me="10px">
+              {t}
+            </ListItem>
+          ))}
+        </UnorderedList>
+
+        <HStack spacing={4}>
+          <Link href={github} target="_blank">
+            <Icon as={FiGithub} fontSize="1.8em" color="secondary.200" />
+          </Link>
+
+          <Link href={demo} target="_blank">
+            <Icon as={FiExternalLink} fontSize="1.8em" color="secondary.200" />
+          </Link>
+        </HStack>
+      </VStack>
+      <Flex
+        w={["100%", "100%", "640px"]}
+        h={["520px", "500px", "480px"]}
+        bg="primary.700"
+        position="absolute"
+        left={direction === "rtol" ? "0" : "auto"}
+        right={direction === "ltor" ? "0" : "auto"}
+        zIndex={0}
+        overflow="hidden"
+        borderRadius="md"
+      >
+        <Link href={demo} target="_blank">
+          <NextImage
+            className="project-image"
+            fill={true}
+            src={image}
+            alt="project screenshot"
+            style={{
+              objectFit: "cover",
+              filter: "blur(1px)",
+            }}
+          />
+        </Link>
+      </Flex>
+    </Flex>
+  );
+};
+
+interface ProjectItemType {
+  title: string;
+  description: string;
+  tech: string[];
+  github: string;
+  demo: string;
+  image: string;
+}
+
+const projects: ProjectItemType[] = [
+  {
+    title: "Smart Carte",
+    description:
+      "I am currently working on a cloud-based remote sensing tool to help protected areas understand deforestation and burned areas. Current remote sensing tools require too much expertise for parks to invest in. This tool makes it really simple to understand forests and grasslands and direct staff to hotspots.",
+    tech: ["Python", "NN/ML", "React", "GDAL", "Mapbox", "Django", "AWS"],
+    github: "https://github.com/caseyslaught/smartcarte-containers",
+    demo: "https://smartcarte.earth/demo/halmahera-nickel-apr-2023",
+    image: "/images/smart_carte.png",
+  },
+  {
+    title: "SimpleDroneMaps",
+    description:
+      "I am currently working on a cloud-based remote sensing tool to help protected areas understand deforestation and burned areas. Current remote sensing tools require too much expertise for parks to invest in. This tool makes it really simple to understand forests and grasslands and direct staff to hotspots.",
+    tech: ["Python", "GDAL", "React", "Mapbox", "Django", "AWS"],
+    github: "",
+    demo: "https://simpledronemaps.com",
+    image: "/images/smart_carte.png",
+  },
+  {
+    title: "Virunga LoRa Alert System",
+    description:
+      "This system helps communities report sightings of dangerous rebel groups in the region as well as helping the park to track vehicles and personnel. I designed the LoRa antenna network and built the software that makes use of the position data.",
+    tech: ["LoRaWAN", "Chirpstack", "Python", "React", "AWS"],
+    github: "",
+    demo: "",
+    image: "/images/smart_carte.png",
+  },
+];
 
 export default ProjectsSection;

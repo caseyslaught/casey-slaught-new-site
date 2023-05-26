@@ -54,7 +54,7 @@ const HeaderMain: React.FC<Props> = ({ isMobileOrTablet }) => {
     <Flex
       w="100%"
       bg="primary.800"
-      px={["1em", "1em", "2em"]}
+      px={["1em", "2em"]}
       h={prevScrollPos > 80 ? "60px" : "80px"}
       position="fixed"
       top={visible ? "0" : "-80px"}
