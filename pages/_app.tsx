@@ -37,6 +37,7 @@ export default function App({ Component, pageProps }: AppProps) {
       },
       secondary: {
         200: "#D9D9D9",
+        600: "#454545",
       },
     },
     components: {
@@ -58,18 +59,21 @@ export default function App({ Component, pageProps }: AppProps) {
     },
     styles: {
       global: {
+        body: {
+          bg: "primary.800",
+        },
         "html, #jobs-list": {
           "::-webkit-scrollbar": {
             width: "10px",
           },
           "::-webkit-scrollbar-thumb": {
-            backgroundColor: "#454545",
-            border: "2px solid #222f42",
+            backgroundColor: "secondary.600",
+            border: "2px solid primary.600",
             borderRadius: "8px",
           },
 
           "::-webkit-scrollbar-track": {
-            backgroundColor: "#222f42",
+            backgroundColor: "primary.800",
           },
         },
         "#jobs-list": {

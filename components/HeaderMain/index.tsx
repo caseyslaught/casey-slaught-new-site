@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import NextLink from "next/link";
 import {
   Box,
   Button,
@@ -89,9 +90,11 @@ const DesktopMenu: React.FC = () => {
   return (
     <HStack spacing={5}>
       <Sections isMobileOrTablet={false} />
-      <Button colorScheme="accent" variant="outline">
-        Resume
-      </Button>
+      <Link href="/files/resume.pdf" isExternal>
+        <Button colorScheme="accent" variant="outline">
+          Resume
+        </Button>
+      </Link>
     </HStack>
   );
 };
@@ -131,9 +134,11 @@ const MobileMenu: React.FC = () => {
           <DrawerCloseButton />
           <DrawerBody>
             <VStack align="flex-start" mt={24} spacing={4}>
-              <Button colorScheme="accent" variant="outline" size="lg">
-                Resume
-              </Button>
+              <Link href="/files/resume.pdf" isExternal>
+                <Button colorScheme="accent" variant="outline" size="lg">
+                  Resume
+                </Button>
+              </Link>
 
               <Divider pt={2} />
 

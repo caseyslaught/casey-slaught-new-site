@@ -36,7 +36,11 @@ const ProjectsSection: React.FC<Props> = () => {
         color="gray.50"
         mb="40px"
       >
-        <VStack w={["100%", "100%", "360px"]} align="flex-start" mb="20px">
+        <VStack
+          w={["100%", "100%", "360px"]}
+          align="flex-start"
+          mb={["20px", "20px", "40px"]}
+        >
           <Heading fontSize={["xl", "2xl"]}>🏗️ Projects</Heading>
           <Divider />
         </VStack>
@@ -80,7 +84,6 @@ const ProjectItem: React.FC<ItemProps> = ({
     <Flex
       h={["520px", "500px", "480px"]}
       w="100%"
-      mt="40px"
       align="center"
       justify={
         direction === "ltor" || isMobileOrTablet ? "flex-start" : "flex-end"

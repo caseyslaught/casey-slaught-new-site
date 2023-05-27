@@ -40,12 +40,12 @@ const HeroSection: React.FC<Props> = ({ isLoaded }) => {
           </Skeleton>
           <Skeleton isLoaded={isLoaded} fadeDuration={2}>
             <Text>
-              I&apos;m a full-stack developer focused on building
-              geospatial-driven applications that have a meaningful
-              environmental impact. I recently earned a Masters in Environmental
-              Management degree from Duke University. I also oversee a couple
-              technology projects at Virunga National Park in the Democratic
-              Republic of the Congo.
+              I&apos;m a full-stack developer focused on building easy-to-use
+              geospatial applications that have a meaningful environmental
+              impact. I recently earned a Masters in Environmental Management
+              degree from Duke University. I also oversee a couple technology
+              projects at Virunga National Park in the Democratic Republic of
+              the Congo.
             </Text>
           </Skeleton>
         </VStack>
