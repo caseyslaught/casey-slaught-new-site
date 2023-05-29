@@ -131,7 +131,7 @@ const MobileMenu: React.FC = () => {
       >
         <DrawerOverlay />
         <DrawerContent bg="primary.700" color="gray.50">
-          <DrawerCloseButton />
+          <DrawerCloseButton size="lg" />
           <DrawerBody>
             <VStack align="flex-start" mt={24} spacing={4}>
               <Link href="/files/resume.pdf" isExternal>
@@ -180,7 +180,7 @@ const Sections: React.FC<SectionsProps> = ({
     }
   };
 
-  const fontSize = isMobileOrTablet ? "md" : "sm";
+  const fontSize = isMobileOrTablet ? "lg" : "md";
 
   return (
     <>

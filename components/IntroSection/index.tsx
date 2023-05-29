@@ -57,35 +57,35 @@ const IntroSection: React.FC<Props> = () => {
             maxW={["none", "none", "500px"]}
             spacing={6}
             zIndex={[0, 0, 99]}
-            fontSize="0.9em"
+            fontSize="1em"
           >
             <Text>
               Hello, and thanks for visiting my personal website! I made this
               site to showcase the things I am interested in (both tech-related
-              and otherwise) and hopefully serve a marker to others who feel
-              like they have an unconventional background as a software
-              developer.
+              and otherwise) and hopefully serve as a reference for others who
+              feel their path towards software development is weird or
+              non-conventional.
+            </Text>
+
+            <Text>
+              As a software engineer, I&apos;m interested in building intuitive
+              geospatial tools on the web. I know from experience that aerial
+              imagery and spatial data can be hugely beneficial, but many of the
+              current tools out there are too complicated. I want to change
+              that.
+            </Text>
+
+            <Text>
+              Software is a means to an end, and for much of my career the cause
+              that I thought most in need attention was the ongoing pressures
+              faced by conservationists and the wildlife they protect. I still
+              do, but I also think that geospatial technology and has a big role
+              to play in our transition towards more sustainable energy and food
+              systems. I hope to be a part of this transformation.
             </Text>
             <Text>
-              Software is a means to an end and since 2013 the end that I
-              thought most in need attention was the ongoing pressures faced by
-              conservationists and the wildlife they protect. I have been using
-              my understanding of computer science to help conservationists in
-              their fight against poaching and other illegal activities.
-            </Text>
-            <Text>
-              Aenean sed adipiscing diam donec adipiscing tristique risus nec.
-              Lectus sit amet est placerat in egestas erat imperdiet. Tortor
-              posuere ac ut consequat semper viverra nam. In pellentesque massa
-              placerat duis ultricies lacus sed turpis. Id cursus metus aliquam
-              eleifend.
-            </Text>
-            <Text>
-              Aenean sed adipiscing diam donec adipiscing tristique risus nec.
-              Lectus sit amet est placerat in egestas erat imperdiet. Tortor
-              posuere ac ut consequat semper viverra nam. In pellentesque massa
-              placerat duis ultricies lacus sed turpis. Id cursus metus aliquam
-              eleifend.
+              Here are some of the technologies I regularly use: Python,
+              PyTorch, JavaScript, TypeScript, Next.js, React, GDAL, Mapbox, AWS
             </Text>
           </VStack>
           <Box
@@ -120,8 +120,9 @@ const IntroSection: React.FC<Props> = () => {
                   What&apos;s going on here?
                 </PopoverHeader>
                 <PopoverBody fontSize="0.8em">
-                  I just finished an anti-poaching training program in South
-                  Africa after a final 50 kilometer trek through the bush.
+                  In the summer of 2013 I finished an anti-poaching training
+                  program in South Africa after a final 50 kilometer trek
+                  through the bush.
                 </PopoverBody>
               </PopoverContent>
             </Popover>

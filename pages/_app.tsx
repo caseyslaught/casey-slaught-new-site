@@ -59,6 +59,9 @@ export default function App({ Component, pageProps }: AppProps) {
     },
     styles: {
       global: {
+        "html, body": {
+          fontSize: "14px",
+        },
         body: {
           bg: "primary.800",
         },

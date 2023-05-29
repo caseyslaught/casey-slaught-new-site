@@ -41,8 +41,9 @@ const ContactSection: React.FC<Props> = () => {
             <Text as="span" color="accent.500">
               looking for work
             </Text>{" "}
-            in Western Europe or remote. If you think I&apos;m cool, let me
-            know!
+            in Western Europe or remote. If you&apos;re interested in my
+            particular set of skills, or just wanna chat, feel free to reach
+            out!
           </Text>
           <VStack align="flex-start" spacing={[4, 4, 2]}>
             <ContactItem icon={FiMail} href="mailto:caseyslaught@gmail.com">
