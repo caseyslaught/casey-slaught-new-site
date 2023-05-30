@@ -36,16 +36,12 @@ const HeroSection: React.FC<Props> = ({ isLoaded }) => {
             </Text>
           </Skeleton>
           <Skeleton isLoaded={isLoaded} fadeDuration={2}>
-            <Text>I build geospatial applications on the web.</Text>{" "}
+            <Text>I build web-based geospatial applications.</Text>{" "}
           </Skeleton>
           <Skeleton isLoaded={isLoaded} fadeDuration={2}>
             <Text>
-              I&apos;m a full-stack developer focused on building easy-to-use
-              geospatial applications that have a meaningful environmental
-              impact. I recently earned a Masters in Environmental Management
-              degree from Duke University. I also oversee a couple technology
-              projects at Virunga National Park in the Democratic Republic of
-              the Congo.
+              I am passionate about building tools that help people make better
+              decisions about ecosystems and natural resources.
             </Text>
           </Skeleton>
         </VStack>

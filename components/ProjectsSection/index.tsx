@@ -207,7 +207,7 @@ const projects: ProjectItemType[] = [
     title: "SimpleDroneMaps",
     description:
       "Currently working on an aerial imagery management tool to help drone operators and researchers host orthomosaics, satellite imagery, and 3D models and share them easily with clients or colleagues. Visualization of very large assets is performed through map tiling and CDN setup with AWS S3 and CloudFront.",
-    tech: ["Python", "GDAL", "Next.js", "Django", "AWS"],
+    tech: ["Python", "GDAL", "Next.js", "TypeScript", "Django", "AWS"],
     github: "",
     demo: "https://simpledronemaps.com",
     image: "/images/simpledronemaps.png",
@@ -215,7 +215,7 @@ const projects: ProjectItemType[] = [
   {
     title: "Virunga LoRa Alert System",
     description:
-      "System that helps communities report sightings of dangerous rebel groups in real-time through LoRa alert buttons connected to a security dashboard and SMS service. Designed network infrastructure, configured LoRa devices and server, and built interface for viewing network of devices.",
+      "System that helps communities around Virunga National Park report sightings of dangerous rebel groups in real-time through LoRa alert buttons connected to a security dashboard and SMS service. Designed network infrastructure, configured LoRa devices and server, and built interface for viewing network of devices.",
     tech: ["Python", "LoRaWAN", "Chirpstack", "React", "AWS"],
     github: "https://github.com/virunga/lora-alert-app",
     demo: "",

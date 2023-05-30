@@ -71,8 +71,8 @@ const IntroSection: React.FC<Props> = () => {
               As a software engineer, I&apos;m interested in building intuitive
               geospatial tools on the web. I know from experience that aerial
               imagery and spatial data can be hugely beneficial, but many of the
-              current tools out there are too complicated. I want to change
-              that.
+              current tools out there are too complicated for non-technical
+              users. I want to change that.
             </Text>
 
             <Text>

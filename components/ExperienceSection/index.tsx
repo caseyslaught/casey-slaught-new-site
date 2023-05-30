@@ -120,6 +120,15 @@ interface JobType {
 }
 
 const jobs: JobType = {
+  "Duke University": {
+    role: "Master of Environmental Management",
+    dateRange: "Aug 2021 - May 2023",
+    location: "Durham, North Carolina",
+    points: [
+      "Developed Smart Carte, thesis project on cloud-based remote sensing and neural network models to monitor deforestation in the tropics",
+      "Additional coursework in remote sensing, environmental statistics, resource economics, and entrepreneurship",
+    ],
+  },
   "Virunga National Park": {
     role: "Technology Project Manager",
     dateRange: "Jan 2016 - Aug 2017 and Jan 2020 - Aug 2022",
@@ -129,7 +138,6 @@ const jobs: JobType = {
       "Created cloud-based spatial data integration system to track ranger patrols and park vehicles",
       "Developed Google Earth Engine project to monitor deforestation and agricultural encroachment",
       "Established drone surveillance program by training 25 rangers in French",
-      "Assistant (to the) head beekeeper",
     ],
   },
   "Flower Child": {
@@ -148,8 +156,8 @@ const jobs: JobType = {
     location: "Kigali, Rwanda",
     points: [
       "Founded and designed platform that links informal hardware shops with institutional buyers to reduce inefficiencies in the construction materials market",
-      "Developed an online marketplace for heavy machinery that featured over 200 items from East Africa",
-      "Engineered a secure API, cloud architecture, relational database, and GIS-powered onboarding process",
+      "Developed online marketplace for heavy machinery that featured over 200 items from East Africa",
+      "Engineered a secure API, cloud architecture, relational database, and GIS-integrated onboarding process",
     ],
   },
   Caracal: {
@@ -158,10 +166,11 @@ const jobs: JobType = {
     location: "Kigali, Rwanda",
     points: [
       "Designed and implemented a geospatial data automation tool for protected areas to connect wildlife tracking collars with GIS platforms",
-      "Received a Early Career grant from the National Geographic Society to cover development costs",
-      "Managed a team of two remote programmers in the design and implementation of new features",
+      "Received competitive grant from the National Geographic Society to cover development costs",
+      "Managed team of two remote programmers in the design and implementation of new features",
     ],
   },
+  /*
   "Tuma Consulting": {
     role: "Technology Consultant",
     dateRange: "Sep 2017 - Jun 2018",
@@ -172,6 +181,7 @@ const jobs: JobType = {
       "Worked with Impact Hub Kigali and UNDP on Design Thinking workshops with local tech entrepreneurs",
     ],
   },
+  */
 };
 
 export default ExperienceSection;
