@@ -131,12 +131,13 @@ const jobs: JobType = {
   },
   "Virunga National Park": {
     role: "Technology Project Manager",
-    dateRange: "Jan 2016 - Aug 2017 and Jan 2020 - Aug 2022",
+    dateRange: "Jan 2016 - Aug 2017 and Jan 2020 - Sep 2021",
     location: "North Kivu, Democratic Republic of the Congo",
     points: [
       "Designed real-time LoRa alert system for communities to report potential rebel incursions",
       "Created cloud-based spatial data integration system to track ranger patrols and park vehicles",
       "Developed Google Earth Engine project to monitor deforestation and agricultural encroachment",
+      "Designed and managed project to extend Ubiquiti long-range VLAN to 6 remote ranger posts",
       "Established drone surveillance program by training 25 rangers in French",
     ],
   },
@@ -162,7 +163,7 @@ const jobs: JobType = {
   },
   Caracal: {
     role: "Founder / Software Engineer",
-    dateRange: "Jan 2019 - Dec 2019",
+    dateRange: "Jan 2019 - Jan 2020",
     location: "Kigali, Rwanda",
     points: [
       "Designed and implemented a geospatial data automation tool for protected areas to connect wildlife tracking collars with GIS platforms",
