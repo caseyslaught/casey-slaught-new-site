@@ -1,14 +1,5 @@
 import React from "react";
-import {
-  As,
-  Divider,
-  Flex,
-  Heading,
-  Icon,
-  Link,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { As, Divider, Flex, Heading, Icon, Link, Text, VStack } from "@chakra-ui/react";
 import { FiGithub, FiMail, FiTwitter } from "react-icons/fi";
 
 interface Props {}
@@ -22,14 +13,7 @@ const ContactSection: React.FC<Props> = () => {
       align="flex-start"
       pb="160px"
     >
-      <Flex
-        direction="column"
-        align="flex-start"
-        w="100%"
-        maxW="1080px"
-        m="0 auto"
-        color="gray.50"
-      >
+      <Flex direction="column" align="flex-start" w="100%" maxW="1080px" m="0 auto" color="gray.50">
         <VStack w={["100%", "100%", "360px"]} align="flex-start" mb="40px">
           <Heading fontSize={["xl", "2xl"]}>✉️ Contact</Heading>
           <Divider />
@@ -37,13 +21,7 @@ const ContactSection: React.FC<Props> = () => {
 
         <VStack w="100%">
           <Text textAlign="center" mb={["20px", "20px", "10px"]} maxW="520px">
-            I&apos;m currently{" "}
-            <Text as="span" color="accent.500">
-              looking for work
-            </Text>{" "}
-            in Western Europe or remote. If you&apos;re interested in my
-            particular set of skills, or just wanna chat, feel free to reach
-            out!
+            Let me know if you&apos;re interested in the stuff I&apos;ve been working on!
           </Text>
           <VStack align="flex-start" spacing={[4, 4, 2]}>
             <ContactItem icon={FiMail} href="mailto:caseyslaught@gmail.com">
@@ -54,10 +32,7 @@ const ContactSection: React.FC<Props> = () => {
               follow me
             </ContactItem>
 
-            <ContactItem
-              icon={FiTwitter}
-              href="https://twitter.com/caseyslaught"
-            >
+            <ContactItem icon={FiTwitter} href="https://twitter.com/caseyslaught">
               tweet me
             </ContactItem>
           </VStack>

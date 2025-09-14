@@ -36,11 +36,7 @@ const ProjectsSection: React.FC<Props> = () => {
         color="gray.50"
         mb="40px"
       >
-        <VStack
-          w={["100%", "100%", "360px"]}
-          align="flex-start"
-          mb={["20px", "20px", "40px"]}
-        >
+        <VStack w={["100%", "100%", "360px"]} align="flex-start" mb={["20px", "20px", "40px"]}>
           <Heading fontSize={["xl", "2xl"]}>🏗️ Projects</Heading>
           <Divider />
         </VStack>
@@ -64,8 +60,8 @@ interface ItemProps {
   title: string;
   description: string;
   tech: string[];
-  github: string;
-  demo: string;
+  github?: string;
+  demo?: string;
   image: string;
 }
 
@@ -85,40 +81,24 @@ const ProjectItem: React.FC<ItemProps> = ({
       h={["520px", "500px", "480px"]}
       w="100%"
       align="center"
-      justify={
-        direction === "ltor" || isMobileOrTablet ? "flex-start" : "flex-end"
-      }
+      justify={direction === "ltor" || isMobileOrTablet ? "flex-start" : "flex-end"}
       position="relative"
     >
       <VStack
         w="100%"
         maxW="480px"
-        align={
-          direction === "ltor" || isMobileOrTablet ? "flex-start" : "flex-end"
-        }
+        align={direction === "ltor" || isMobileOrTablet ? "flex-start" : "flex-end"}
         mt={["10px", "40px"]}
         px={["10px", "24px", "10px"]}
         spacing={4}
         zIndex={999}
       >
         <Heading fontSize={["xl", "2xl"]}>{title}</Heading>
-        <Flex
-          bg="secondary.200"
-          color="primary.700"
-          p="1em"
-          borderRadius="md"
-          shadow="md"
-        >
+        <Flex bg="secondary.200" color="primary.700" p="1em" borderRadius="md" shadow="md">
           {description}
         </Flex>
 
-        <UnorderedList
-          display="flex"
-          flexWrap="wrap"
-          position="relative"
-          styleType="none"
-          px="2px"
-        >
+        <UnorderedList display="flex" flexWrap="wrap" position="relative" styleType="none" px="2px">
           {tech.map((t) => (
             <ListItem key={t} me="10px">
               {t}
@@ -134,11 +114,7 @@ const ProjectItem: React.FC<ItemProps> = ({
           )}
           {demo && (
             <Link href={demo} target="_blank">
-              <Icon
-                as={FiExternalLink}
-                fontSize="1.8em"
-                color="secondary.200"
-              />
+              <Icon as={FiExternalLink} fontSize="1.8em" color="secondary.200" />
             </Link>
           )}
         </HStack>
@@ -188,37 +164,34 @@ interface ProjectItemType {
   title: string;
   description: string;
   tech: string[];
-  github: string;
-  demo: string;
+  github?: string;
+  demo?: string;
   image: string;
 }
 
 const projects: ProjectItemType[] = [
+  {
+    title: "Rasterly",
+    description:
+      "Currently working on an aerial imagery management tool to help drone operators, conservationists, and researchers visualize and share massive raster datasets on the web.",
+    tech: ["TypeScript", "React", "Python", "TiTiler", "Django", "GDAL", "AWS"],
+    github: "",
+    demo: "https://rasterly.com",
+    image: "/images/rasterly.png",
+  },
   {
     title: "Smart Carte",
     description:
       "Web application that makes preparing cloud-free Sentinel-2 imagery and land cover classifications simple for non-technical users. Select a study area and date, then view or download an analysis-ready image. Uses semantic segmentation models to perform cloud detection and land cover classification. Run on AWS Fargate for highly scalable tasks.",
     tech: ["Python", "GDAL", "PyTorch", "Labelbox", "React", "Django", "AWS"],
     github: "https://github.com/caseyslaught/smartcarte-containers",
-    demo: "https://smartcarte.earth/demo/halmahera-nickel-apr-2023",
     image: "/images/smartcarte.png",
-  },
-  {
-    title: "SimpleDroneMaps",
-    description:
-      "Currently working on an aerial imagery management tool to help drone operators and researchers host orthomosaics, satellite imagery, and 3D models and share them easily with clients or colleagues. Visualization of very large assets is performed through map tiling and CDN setup with AWS S3 and CloudFront.",
-    tech: ["Python", "GDAL", "Next.js", "TypeScript", "Django", "AWS"],
-    github: "",
-    demo: "https://simpledronemaps.com",
-    image: "/images/simpledronemaps.png",
   },
   {
     title: "Virunga LoRa Alert System",
     description:
       "System that helps communities around Virunga National Park report sightings of dangerous rebel groups in real-time through LoRa alert buttons connected to a security dashboard and SMS service. Designed network infrastructure, configured LoRa devices and server, and built interface for viewing network of devices.",
     tech: ["Python", "LoRaWAN", "Chirpstack", "React", "AWS"],
-    github: "https://github.com/virunga/lora-alert-app",
-    demo: "",
     image: "/images/loraalertsystem.png",
   },
   {

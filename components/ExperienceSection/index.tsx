@@ -13,7 +13,7 @@ import {
 interface Props {}
 
 const ExperienceSection: React.FC<Props> = () => {
-  const [selectedJob, setSelectedJob] = useState("Virunga National Park");
+  const [selectedJob, setSelectedJob] = useState("Satelligence");
 
   return (
     <Flex
@@ -23,25 +23,13 @@ const ExperienceSection: React.FC<Props> = () => {
       align="flex-start"
       pb={["60px", "120px"]}
     >
-      <Flex
-        direction="column"
-        align="flex-start"
-        w="100%"
-        maxW="1080px"
-        m="0 auto"
-        color="gray.50"
-      >
+      <Flex direction="column" align="flex-start" w="100%" maxW="1080px" m="0 auto" color="gray.50">
         <VStack w={["100%", "100%", "360px"]} align="flex-start" mb="20px">
           <Heading fontSize={["xl", "2xl"]}>🧑‍💻 Experience</Heading>
           <Divider />
         </VStack>
 
-        <Flex
-          direction={["column", "column", "row"]}
-          align="center"
-          justify="flex-start"
-          w="100%"
-        >
+        <Flex direction={["column", "column", "row"]} align="center" justify="flex-start" w="100%">
           <Stack
             id="jobs-list"
             direction={["row", "row", "column"]}
@@ -65,9 +53,7 @@ const ExperienceSection: React.FC<Props> = () => {
                 borderLeft={["none", "none", "2px solid"]}
                 borderBottom={["2px solid", "2px solid", "none"]}
                 borderColor={
-                  job === selectedJob
-                    ? "accent.500 !important"
-                    : "secondary.200 !important"
+                  job === selectedJob ? "accent.500 !important" : "secondary.200 !important"
                 }
                 onClick={() => setSelectedJob(job)}
                 whiteSpace="nowrap"
@@ -120,18 +106,27 @@ interface JobType {
 }
 
 const jobs: JobType = {
+  Satelligence: {
+    role: "Full-Stack Software Engineer",
+    dateRange: "Jan 2024 - present",
+    location: "Remote",
+    points: [
+      "Developing a geospatial-data driven web application to help customers monitor deforestation around their supply chains",
+      "Building cloud infrastructure and UIs to support real-time monitoring of millions of plots around the world",
+    ],
+  },
   "Duke University": {
     role: "Master of Environmental Management",
     dateRange: "Aug 2021 - May 2023",
     location: "Durham, North Carolina",
     points: [
-      "Developed Smart Carte, thesis project on cloud-based remote sensing and neural network models to monitor deforestation in the tropics",
+      "Developed Smart Carte, a thesis project on cloud-based remote sensing and neural network models to monitor deforestation in the tropics",
       "Additional coursework in remote sensing, environmental statistics, resource economics, and entrepreneurship",
     ],
   },
   "Virunga National Park": {
     role: "Technology Project Manager",
-    dateRange: "Jan 2016 - Aug 2017 and Jan 2020 - Sep 2021",
+    dateRange: "Jan 2016 - Aug 2017 and Jan 2020 - Aug 2021",
     location: "North Kivu, Democratic Republic of the Congo",
     points: [
       "Designed real-time LoRa alert system for communities to report potential rebel incursions",
@@ -171,18 +166,6 @@ const jobs: JobType = {
       "Managed team of two remote programmers in the design and implementation of new features",
     ],
   },
-  /*
-  "Tuma Consulting": {
-    role: "Technology Consultant",
-    dateRange: "Sep 2017 - Jun 2018",
-    location: "Kigali, Rwanda",
-    points: [
-      "Founded technology consulting firm specializing in data visualization, geospatial analysis, and workshop facilitation",
-      "Developed a web-based platform for the Rwanda Development Board to track foreign investments in the country",
-      "Worked with Impact Hub Kigali and UNDP on Design Thinking workshops with local tech entrepreneurs",
-    ],
-  },
-  */
 };
 
 export default ExperienceSection;

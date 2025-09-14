@@ -14,14 +14,7 @@ const HeroSection: React.FC<Props> = ({ isLoaded }) => {
       align="center"
       h="calc(100vh - 80px)"
     >
-      <Flex
-        align="flex-start"
-        w="100%"
-        maxW="1080px"
-        m="0 auto"
-        color="gray.50"
-        mb="40px"
-      >
+      <Flex align="flex-start" w="100%" maxW="1080px" m="0 auto" color="gray.50" mb="40px">
         <VStack spacing={6} maxW="560px" align="flex-start">
           <Skeleton isLoaded={isLoaded} fadeDuration={2}>
             <Text>Hey there,</Text>
@@ -36,12 +29,12 @@ const HeroSection: React.FC<Props> = ({ isLoaded }) => {
             </Text>
           </Skeleton>
           <Skeleton isLoaded={isLoaded} fadeDuration={2}>
-            <Text>I build web-based geospatial applications.</Text>{" "}
+            <Text>I make web-based geospatial applications.</Text>{" "}
           </Skeleton>
           <Skeleton isLoaded={isLoaded} fadeDuration={2}>
             <Text>
-              I am passionate about building tools that help people make better
-              decisions about ecosystems and natural resources.
+              I am passionate about building tools that help people make better decisions about
+              ecosystems and natural resources.
             </Text>
           </Skeleton>
         </VStack>
