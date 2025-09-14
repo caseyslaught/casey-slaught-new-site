@@ -1,6 +1,6 @@
 import React from "react";
 import { As, Divider, Flex, Heading, Icon, Link, Text, VStack } from "@chakra-ui/react";
-import { FiGithub, FiMail, FiTwitter } from "react-icons/fi";
+import { FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
 
 interface Props {}
 
@@ -24,8 +24,8 @@ const ContactSection: React.FC<Props> = () => {
             Let me know if you&apos;re interested in the stuff I&apos;ve been working on!
           </Text>
           <VStack align="flex-start" spacing={[4, 4, 2]}>
-            <ContactItem icon={FiMail} href="mailto:caseyslaught@gmail.com">
-              email me
+            <ContactItem icon={FiLinkedin} href="https://www.linkedin.com/in/casey-slaught/">
+              connect with me
             </ContactItem>
 
             <ContactItem icon={FiGithub} href="https://github.com/caseyslaught">
